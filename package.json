@@ -1,6 +1,6 @@
 {
   "name": "@100hires/mcp-server",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Official MCP server for 100Hires ATS — exposes the full recruiting API as MCP tools",
   "type": "module",
   "bin": {

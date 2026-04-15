@@ -7,6 +7,7 @@ import { registerCandidateTools } from "./tools/candidates.js";
 import { registerApplicationTools } from "./tools/applications.js";
 import { registerJobTools } from "./tools/jobs.js";
 import { registerMessageTools } from "./tools/messages.js";
+import { registerNotificationMessageTools } from "./tools/notification-messages.js";
 import { registerInterviewTools } from "./tools/interviews.js";
 import { registerNoteTools } from "./tools/notes.js";
 import { registerEvaluationTools } from "./tools/evaluations.js";
@@ -31,6 +32,7 @@ if (API_KEY) {
   registerApplicationTools(server);
   registerJobTools(server);
   registerMessageTools(server);
+  registerNotificationMessageTools(server);
   registerInterviewTools(server);
   registerNoteTools(server);
   registerEvaluationTools(server);

@@ -2,7 +2,7 @@
 
 Official [Model Context Protocol](https://modelcontextprotocol.io/) server for [100Hires](https://100hires.com) — the applicant tracking system for recruiting teams.
 
-Exposes the full [100Hires API v2](https://100hires.com/api) as **123 MCP tools**, enabling AI assistants to manage candidates, jobs, applications, interviews, messages, and more.
+Exposes the full [100Hires API v2](https://100hires.com/api) as **127 MCP tools**, enabling AI assistants to manage candidates, jobs, applications, interviews, messages, and more.
 
 ## Prerequisites
 
@@ -92,7 +92,7 @@ Add to `.vscode/mcp.json`:
 }
 ```
 
-## Tools (123)
+## Tools (127)
 
 ### Candidates (18 tools)
 
@@ -172,6 +172,15 @@ Add to `.vscode/mcp.json`:
 | `hires_patch_message` | Partial update of scheduled message |
 | `hires_delete_message` | Cancel a scheduled message |
 | `hires_batch_create_messages` | Batch schedule up to 100 messages |
+
+### Notification Messages (4 tools)
+
+| Tool | Description |
+|------|-------------|
+| `hires_get_notification_message` | Get a notification email (e.g. rejection) by ID |
+| `hires_update_notification_message` | Update subject, body, reschedule send time |
+| `hires_delete_notification_message` | Cancel a scheduled notification |
+| `hires_cancel_all_notification_messages` | Cancel all scheduled notifications for a candidate |
 
 ### Interviews (2 tools)
 
