@@ -17,6 +17,7 @@ import { registerNurtureCampaignTools } from "./tools/nurture-campaigns.js";
 import { registerUserTools } from "./tools/users.js";
 import { registerCompanyTools } from "./tools/companies.js";
 import { registerTaxonomyTools } from "./tools/taxonomy.js";
+import { registerFeedbackTools } from "./tools/feedback.js";
 import { registerCareerSiteTools } from "./tools/career-site.js";
 
 const API_KEY = process.env.API_KEY;
@@ -42,6 +43,7 @@ if (API_KEY) {
   registerUserTools(server);
   registerCompanyTools(server);
   registerTaxonomyTools(server);
+  registerFeedbackTools(server);
 }
 
 // Career-site tools use X-Company-Slug header, no API key needed
