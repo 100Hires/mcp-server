@@ -61,7 +61,12 @@ const SmsStepSchema = z.object({
 const VoicemailStepSchema = z.object({
   ...StepBaseFields,
   type: z.literal("voicemail"),
-  attachment_id: z.number().describe("Voicemail audio file ID"),
+  attachment_uuid: z
+    .string()
+    .uuid()
+    .describe(
+      "Voicemail audio file UUID. Reuse an existing voicemail step's `attachment_uuid`, or upload a new audio file through `hires_upload_attachment` with category `voicemail` and use the returned `uuid`."
+    ),
   schedule_id: z
     .number()
     .optional()

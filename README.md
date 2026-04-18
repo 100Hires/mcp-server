@@ -2,7 +2,7 @@
 
 Official [Model Context Protocol](https://modelcontextprotocol.io/) server for [100Hires](https://100hires.com) — the applicant tracking system for recruiting teams.
 
-Exposes the full [100Hires API v2](https://100hires.com/api) as **128 MCP tools**, enabling AI assistants to manage candidates, jobs, applications, interviews, messages, and more.
+Exposes the full [100Hires API v2](https://100hires.com/api) as **130 MCP tools**, enabling AI assistants to manage candidates, jobs, applications, interviews, messages, and more.
 
 ## Prerequisites
 
@@ -92,7 +92,7 @@ Add to `.vscode/mcp.json`:
 }
 ```
 
-## Tools (128)
+## Tools (130)
 
 ### Candidates (18 tools)
 
@@ -287,6 +287,13 @@ Add to `.vscode/mcp.json`:
 | `hires_list_template_placeholders` | Email template placeholders |
 | `hires_prepare_template_placeholders` | Render placeholders |
 | `hires_get_billing` | Check account pricing/features |
+
+### Attachments (2 tools)
+
+| Tool | Description |
+|------|-------------|
+| `hires_download_attachment` | Download an attachment by absolute URL (resume, candidate file, application file, mail attachment, call recording). Returns base64-encoded bytes + metadata. 25 MB limit. |
+| `hires_upload_attachment` | Upload a file as `voicemail`/`candidate`/`application` attachment. Voicemail upload produces a uuid usable as `attachment_uuid` in nurture-campaign voicemail steps. |
 
 ### Feedback (1 tool)
 

@@ -234,7 +234,7 @@ export function registerCandidateTools(server: McpServer): void {
   // ── List candidate files ───────────────────────────────────────────
   server.tool(
     "hires_list_candidate_files",
-    "List all files attached to a candidate (resumes and other documents). Includes metadata like filename, URL, content type, and size.",
+    "List all files attached to a candidate (resumes and other documents). Each entry has uuid, absolute download url (use Bearer auth), relative_time, file metadata (orig_file_name, file_ext, file_type/MIME, readable_size), and type (resume/other).",
     {
       id: CandidateId,
     },
@@ -275,10 +275,10 @@ export function registerCandidateTools(server: McpServer): void {
   // ── Get candidate resume ───────────────────────────────────────────
   server.tool(
     "hires_get_candidate_resume",
-    "Get the primary resume for a candidate. Use include='text_content' to get parsed plain-text content without downloading the file.",
+    "Get the primary resume for a candidate. Returns uuid, absolute download url (use Bearer auth), relative_time, file metadata, type. Use include='text_content' to also get the parsed plain-text content in a `text` field without downloading the file.",
     {
       id: CandidateId,
-      include: z.string().optional().describe("Comma-separated optional fields. Use 'text_content' to get parsed plain-text resume content."),
+      include: z.string().optional().describe("Comma-separated optional fields. Use 'text_content' to add a `text` field with parsed plain-text resume content."),
     },
     async ({ id, include }) => {
       try {

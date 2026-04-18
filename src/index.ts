@@ -18,6 +18,7 @@ import { registerUserTools } from "./tools/users.js";
 import { registerCompanyTools } from "./tools/companies.js";
 import { registerTaxonomyTools } from "./tools/taxonomy.js";
 import { registerFeedbackTools } from "./tools/feedback.js";
+import { registerAttachmentTools } from "./tools/attachments.js";
 import { registerCareerSiteTools } from "./tools/career-site.js";
 
 const API_KEY = process.env.API_KEY;
@@ -44,6 +45,7 @@ if (API_KEY) {
   registerCompanyTools(server);
   registerTaxonomyTools(server);
   registerFeedbackTools(server);
+  registerAttachmentTools(server);
 }
 
 // Career-site tools use X-Company-Slug header, no API key needed
